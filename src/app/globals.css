@@ -2,8 +2,8 @@
 
 /* 프로젝트 전체에서 사용할 기본 색상과 폰트 변수를 정의합니다. */
 :root {
-  --background: #eef6ff;
-  --foreground: #263248;
+  --background: #fff3f6;
+  --foreground: #331c24;
 }
 
 /* Tailwind CSS v4 테마에서 font-sans 가 Noto Sans KR을 사용하도록 연결합니다. */
@@ -13,9 +13,11 @@
   --font-sans: var(--font-noto-sans-kr), "Noto Sans KR", sans-serif;
 }
 
-/* 전체 배경을 밝은 연한 파란색 파스텔 톤으로 유지하고 기본 글꼴을 적용합니다. */
+/* 전체 배경을 밝은 체리색 파스텔 톤으로 유지하고 기본 글꼴을 적용합니다. */
 body {
-  background: linear-gradient(180deg, #eef6ff 0%, #f3f9ff 52%, #e6f2ff 100%);
+  min-height: 100dvh;
+  background: linear-gradient(180deg, #fff1f5 0%, #fff6f8 52%, #ffe8ef 100%);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-noto-sans-kr), "Noto Sans KR", sans-serif;
 }

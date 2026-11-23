@@ -7,16 +7,16 @@ import Link from "next/link";
  */
 export default function Header() {
   return (
-    <header className="sticky top-0 z-20 flex h-16 items-center justify-between border-b border-purple-100/80 bg-white/85 px-5 backdrop-blur-md">
+    <header className="sticky top-0 z-20 flex h-16 items-center justify-between border-b border-rose-100/90 bg-white/85 px-5 backdrop-blur-md">
       {/* 왼쪽 서비스 이름: 클릭하면 홈(/)으로 이동 */}
       <Link
         href="/"
         className="flex items-center gap-2 rounded-xl py-1 pr-2 transition-opacity hover:opacity-80"
       >
-        {/* 귀여운 파스텔 로고 배지 (별도 아이콘 패키지 없이 SVG로 구현) */}
+        {/* 귀여운 체리색 파스텔 로고 배지 (별도 아이콘 패키지 없이 SVG로 구현) */}
         <span
           aria-hidden="true"
-          className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-pink-200 via-purple-200 to-sky-200 text-purple-700 shadow-xs"
+          className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-[#ffd0dc] via-[#ffb8cb] to-[#ffe1ea] text-rose-700 shadow-xs"
         >
           <svg
             viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ export default function Header() {
       <nav aria-label="주 메뉴">
         <Link
           href="/types"
-          className="inline-flex items-center rounded-full bg-purple-100/80 px-4 py-2 text-sm font-semibold text-purple-800 shadow-xs transition-all hover:bg-purple-200/80 active:scale-[0.97]"
+          className="inline-flex items-center rounded-full bg-rose-100/90 px-4 py-2 text-sm font-semibold text-rose-700 shadow-xs transition-all hover:bg-rose-200/80 active:scale-[0.97]"
         >
           유형 도감
         </Link>

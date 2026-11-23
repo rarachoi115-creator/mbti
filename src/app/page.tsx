@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import HomeCharacterShowcase from "@/components/HomeCharacterShowcase";
 
 /**
  * 첫 화면에 보여줄 특징 카드 데이터 타입입니다.
@@ -20,8 +21,8 @@ const FEATURE_CARDS: FeatureCardItem[] = [
   {
     title: "12문항 · 2분",
     description: "짧고 가벼운 질문에 답하면 금방 끝나요",
-    badgeBgClass: "bg-pink-100 text-pink-600",
-    cardBgClass: "bg-white/90 border-pink-100/90",
+    badgeBgClass: "bg-rose-100 text-rose-600",
+    cardBgClass: "bg-white/90 border-rose-100/90",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -40,8 +41,8 @@ const FEATURE_CARDS: FeatureCardItem[] = [
   {
     title: "16가지 유형",
     description: "나의 성향을 16개 동물 친구 중 하나로 매칭해요",
-    badgeBgClass: "bg-purple-100 text-purple-600",
-    cardBgClass: "bg-white/90 border-purple-100/90",
+    badgeBgClass: "bg-pink-100 text-pink-600",
+    cardBgClass: "bg-white/90 border-pink-100/90",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -62,8 +63,8 @@ const FEATURE_CARDS: FeatureCardItem[] = [
   {
     title: "유형별 3D 캐릭터",
     description: "나만의 귀여운 3D 동물 캐릭터를 만날 수 있어요",
-    badgeBgClass: "bg-sky-100 text-sky-600",
-    cardBgClass: "bg-white/90 border-sky-100/90",
+    badgeBgClass: "bg-[#ffe5df] text-[#d65a52]",
+    cardBgClass: "bg-white/90 border-[#ffd9d2]",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -90,49 +91,30 @@ const FEATURE_CARDS: FeatureCardItem[] = [
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
-      {/* 상단 히어로 카드: 연한 파란색 계열의 밝은 파스텔 배경과 부드러운 그림자 적용 */}
-      <section className="rounded-3xl border border-white bg-gradient-to-br from-[#e2f0ff] via-[#edf6ff] to-[#dff1ff] p-6 text-center shadow-[0_10px_30px_rgba(105,155,220,0.16)]">
+      {/* 상단 히어로 카드: 체리색 계열의 밝은 파스텔 배경과 부드러운 그림자 적용 */}
+      <section className="rounded-3xl border border-white bg-gradient-to-br from-[#ffe5ec] via-[#fff0f4] to-[#ffdde6] p-6 text-center shadow-[0_10px_30px_rgba(225,115,145,0.18)]">
         {/* 작은 서비스 말머리 뱃지 */}
-        <span className="inline-block rounded-full bg-white/90 px-3.5 py-1 text-xs font-semibold text-sky-700 shadow-xs">
+        <span className="inline-block rounded-full bg-white/90 px-3.5 py-1 text-xs font-semibold text-rose-700 shadow-xs">
           새코미 동물 성격 테스트
         </span>
 
-        {/* 귀여운 3D 느낌 파스텔 심볼 원형 영역 */}
-        <div
-          aria-hidden="true"
-          className="mx-auto mt-5 flex h-20 w-20 items-center justify-center rounded-3xl bg-white/95 text-sky-500 shadow-[0_8px_20px_rgba(56,189,248,0.2)]"
-        >
-          <svg
-            viewBox="0 0 48 48"
-            fill="none"
-            className="h-11 w-11"
-            stroke="currentColor"
-            strokeWidth={2.4}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            {/* 귀여운 동물 귀와 얼굴 윤곽 라인 */}
-            <path d="M13 18l-2-9 8 5a13 13 0 0 1 10 0l8-5-2 9a12 12 0 0 1 2 7c0 7.5-6 13-13 13s-13-5.5-13-13a12 12 0 0 1 2-7z" />
-            <circle cx="19" cy="24" r="1.5" fill="currentColor" stroke="none" />
-            <circle cx="29" cy="24" r="1.5" fill="currentColor" stroke="none" />
-            <path d="M21.5 28.5c1.5 1.3 3.5 1.3 5 0" />
-          </svg>
-        </div>
-
         {/* 큰 제목 */}
-        <h1 className="mt-5 text-[1.75rem] font-extrabold tracking-tight text-slate-800">
+        <h1 className="mt-4 text-[1.75rem] font-extrabold tracking-tight text-slate-800">
           나는 어떤 유형일까?
         </h1>
 
         {/* 한 줄 소개 문구 */}
-        <p className="mt-2.5 text-sm leading-relaxed font-medium text-slate-600">
+        <p className="mt-2 text-sm leading-relaxed font-medium text-slate-600">
           12개 질문에 답하고 나와 꼭 닮은 3D 동물 캐릭터를 찾아보세요.
         </p>
 
-        {/* 한층 더 크고 큼직한 검사 시작 버튼: 다음 단계에서 만들 /test 경로로 이동 */}
+        {/* 제목 아래 3초마다 다른 유형으로 바뀌는 단일 3D 캐릭터 영역 */}
+        <HomeCharacterShowcase />
+
+        {/* 한층 더 크고 큼직한 체리색 검사 시작 버튼: /test 경로로 이동 */}
         <Link
           href="/test"
-          className="mt-6 flex min-h-[64px] w-full items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#4b83f2] to-[#6366f1] px-7 py-5 text-xl font-bold tracking-tight text-white shadow-[0_12px_28px_rgba(75,131,242,0.34)] transition-all hover:brightness-105 active:scale-[0.98]"
+          className="mt-6 flex min-h-[64px] w-full items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#d9436e] to-[#eb5c84] px-7 py-5 text-xl font-bold tracking-tight text-white shadow-[0_12px_28px_rgba(217,67,110,0.34)] transition-all hover:brightness-105 active:scale-[0.98]"
         >
           <span>검사 시작하기</span>
           <svg
@@ -156,7 +138,7 @@ export default function Home() {
         {FEATURE_CARDS.map((card) => (
           <div
             key={card.title}
-            className={`flex items-center gap-4 rounded-2xl border p-4 shadow-[0_6px_18px_rgba(110,155,215,0.1)] ${card.cardBgClass}`}
+            className={`flex items-center gap-4 rounded-2xl border p-4 shadow-[0_6px_18px_rgba(225,115,145,0.1)] ${card.cardBgClass}`}
           >
             <div
               aria-hidden="true"

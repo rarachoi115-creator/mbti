@@ -21,6 +21,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 - **기본 스택**: Next.js(App Router) + TypeScript + Tailwind CSS
 - **추후 도입 예정 기술**: 3D 캐릭터는 React Three Fiber로, 데이터베이스와 로그인은 Supabase로 구현할 예정이며, **사용자가 요청하기 전에는 관련 패키지를 미리 설치하지 않는다.**
+- **Supabase 단순한 구조**: 학습용 프로젝트이므로 브라우저에서 `@supabase/supabase-js`로 Supabase를 직접 호출하며, `src/lib/supabase.ts`의 클라이언트 하나만 앱 전체에서 사용한다. `@supabase/ssr`, 미들웨어(`proxy`), 서버 액션, 서버 쪽 인증은 쓰지 않는다.
+- **Supabase 비밀 키 금지**: 비밀 키(`sb_secret_`로 시작하는 키, `service_role` 키)와 DB 비밀번호는 이 프로젝트 어디에도 넣지 않는다.
 - **언어**: 화면에 표시되는 모든 UI 텍스트는 한국어로 작성한다.
 - **반응형 기준**: 모바일 퍼스트(휴대폰 화면 가로 `375px` 기준)로 먼저 보기 좋게 만든 뒤, 더 큰 화면에 대응한다.
 

@@ -27,11 +27,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ko"
-      className={`${notoSansKr.className} ${notoSansKr.variable} h-full antialiased`}
+      className={`${notoSansKr.className} ${notoSansKr.variable} min-h-full antialiased`}
     >
-      <body className="min-h-full">
-        {/* 가운데 정렬된 최대 너비 480px 모바일 앱 틀 (연한 파란색 파스텔 배경) */}
-        <div className="mx-auto flex min-h-dvh w-full max-w-[480px] flex-col bg-gradient-to-b from-[#f7fbff] via-[#eef6ff] to-[#e4f1ff] sm:border-x sm:border-white/90 sm:shadow-[0_12px_40px_rgba(110,155,215,0.16)]">
+      <body className="min-h-dvh">
+        {/* 가운데 정렬된 최대 너비 480px 모바일 앱 틀 (체리색 파스텔 배경) */}
+        <div className="mx-auto flex min-h-dvh w-full max-w-[480px] flex-col bg-gradient-to-b from-[#fffbfc] via-[#fff3f6] to-[#ffeaf0] sm:border-x sm:border-white/90 sm:shadow-[0_12px_40px_rgba(225,115,145,0.18)]">
           {/* 모든 페이지 공통 상단 헤더 */}
           <Header />
 
