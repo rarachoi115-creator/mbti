@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
+import { AuthProvider } from "@/components/AuthProvider";
 import Header from "@/components/Header";
 import "./globals.css";
 
@@ -31,15 +32,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-dvh">
         {/* 가운데 정렬된 최대 너비 480px 모바일 앱 틀 (체리색 파스텔 배경) */}
-        <div className="mx-auto flex min-h-dvh w-full max-w-[480px] flex-col bg-gradient-to-b from-[#fffbfc] via-[#fff3f6] to-[#ffeaf0] sm:border-x sm:border-white/90 sm:shadow-[0_12px_40px_rgba(225,115,145,0.18)]">
-          {/* 모든 페이지 공통 상단 헤더 */}
-          <Header />
+        <AuthProvider>
+          <div className="mx-auto flex min-h-dvh w-full max-w-[480px] flex-col bg-gradient-to-b from-[#fffbfc] via-[#fff3f6] to-[#ffeaf0] sm:border-x sm:border-white/90 sm:shadow-[0_12px_40px_rgba(225,115,145,0.18)]">
+            {/* 모든 페이지 공통 상단 헤더 */}
+            <Header />
 
-          {/* 각 페이지 내용이 들어가는 본문 영역 */}
-          <main className="flex flex-1 flex-col px-5 pt-7 pb-8">
-            {children}
-          </main>
-        </div>
+            {/* 각 페이지 내용이 들어가는 본문 영역 */}
+            <main className="flex flex-1 flex-col px-5 pt-7 pb-8">
+              {children}
+            </main>
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );
