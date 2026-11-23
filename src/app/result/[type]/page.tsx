@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import CharacterViewer from "@/components/CharacterViewer";
+import SaveResultButton from "@/components/SaveResultButton";
 import ShareResultButton from "@/components/ShareResultButton";
 import { getMbtiTypeInfo } from "@/data/types";
 import { ALL_MBTI_TYPES, isValidMbtiType } from "@/lib/mbti";
@@ -209,8 +210,10 @@ async function ResultContent({
         </div>
       </section>
 
-      {/* 6) 하단 버튼 2개: "다시 검사하기"와 "결과 공유하기" */}
-      <section aria-label="결과 이동 및 공유" className="mt-1 flex flex-col gap-3">
+      {/* 6) 하단 버튼: "내 기록에 저장", "결과 공유하기", "다시 검사하기" */}
+      <section aria-label="결과 저장 및 공유" className="mt-1 flex flex-col gap-3">
+        <SaveResultButton type={typeInfo.code} />
+
         <ShareResultButton />
 
         <Link
