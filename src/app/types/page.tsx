@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import TypesGalleryClient from "@/components/TypesGalleryClient";
+import { createPageMetadata } from "@/lib/metadata";
 
-/** 유형 도감 페이지의 브라우저 탭 제목과 설명입니다. */
-export const metadata: Metadata = {
+/** 유형 도감 페이지의 브라우저 탭 제목, 설명, Open Graph 미리보기입니다. */
+export const metadata: Metadata = createPageMetadata({
   title: "유형 도감 | 새코미 MBTI",
-  description: "16가지 성격 유형의 3D 동물 캐릭터를 모두 구경해 보세요.",
-};
+  description:
+    "16가지 성격 유형의 귀여운 3D 동물 캐릭터와 특징을 모두 구경해 보세요.",
+});
 
 /**
  * 헤더의 "유형 도감" 메뉴(/types)로 연결되는 페이지입니다.

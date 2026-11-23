@@ -150,7 +150,7 @@ export default function StatsClient() {
         <p className="mt-4 text-lg font-extrabold text-slate-800">
           아직 모인 결과가 없어요
         </p>
-        <p className="mt-1.5 text-sm text-slate-500">
+        <p className="mt-1.5 text-sm break-keep text-slate-500">
           첫 번째로 검사를 마치고 결과를 저장해 보세요!
         </p>
         <Link

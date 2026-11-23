@@ -26,7 +26,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-20 flex h-16 items-center justify-between gap-1.5 border-b border-rose-100/90 bg-white/85 px-3 backdrop-blur-md sm:gap-2 sm:px-5">
+    <header className="sticky top-0 z-20 flex h-16 items-center justify-between gap-1 border-b border-rose-100/90 bg-white/85 px-2.5 backdrop-blur-md sm:gap-2 sm:px-5">
       {/* 왼쪽 서비스 이름: 클릭하면 홈(/)으로 이동 */}
       <Link
         href="/"
@@ -62,14 +62,14 @@ export default function Header() {
       >
         <Link
           href="/types"
-          className="inline-flex items-center rounded-full bg-rose-100/90 px-2 py-1.5 text-[11px] font-semibold whitespace-nowrap text-rose-700 shadow-xs transition-all hover:bg-rose-200/80 active:scale-[0.97] sm:px-3 sm:text-xs"
+          className="inline-flex items-center rounded-full bg-rose-100/90 px-1.5 py-1.5 text-[11px] font-semibold whitespace-nowrap text-rose-700 shadow-xs transition-all hover:bg-rose-200/80 active:scale-[0.97] sm:px-3 sm:text-xs"
         >
           유형 도감
         </Link>
 
         <Link
           href="/stats"
-          className="inline-flex items-center rounded-full bg-rose-100/90 px-2 py-1.5 text-[11px] font-semibold whitespace-nowrap text-rose-700 shadow-xs transition-all hover:bg-rose-200/80 active:scale-[0.97] sm:px-3 sm:text-xs"
+          className="inline-flex items-center rounded-full bg-rose-100/90 px-1.5 py-1.5 text-[11px] font-semibold whitespace-nowrap text-rose-700 shadow-xs transition-all hover:bg-rose-200/80 active:scale-[0.97] sm:px-3 sm:text-xs"
         >
           통계
         </Link>
@@ -78,13 +78,13 @@ export default function Header() {
         {isLoading ? (
           <span
             aria-hidden="true"
-            className="inline-block h-7 w-[50px] sm:h-8 sm:w-[62px]"
+            className="inline-block h-7 w-[44px] sm:h-8 sm:w-[62px]"
           />
         ) : user ? (
           <>
             <Link
               href="/mypage"
-              className="inline-flex items-center rounded-full bg-rose-50 px-2 py-1.5 text-[11px] font-semibold whitespace-nowrap text-rose-700 ring-1 ring-rose-200/80 transition-all hover:bg-rose-100 active:scale-[0.97] sm:px-2.5 sm:text-xs"
+              className="inline-flex items-center rounded-full bg-rose-50 px-1.5 py-1.5 text-[11px] font-semibold whitespace-nowrap text-rose-700 ring-1 ring-rose-200/80 transition-all hover:bg-rose-100 active:scale-[0.97] sm:px-2.5 sm:text-xs"
             >
               마이페이지
             </Link>
@@ -92,7 +92,7 @@ export default function Header() {
               type="button"
               onClick={handleSignOut}
               disabled={isSigningOut}
-              className="inline-flex min-w-[50px] cursor-pointer items-center justify-center rounded-full border border-rose-200 bg-white px-2 py-1.5 text-[11px] font-semibold whitespace-nowrap text-rose-700 shadow-xs transition-all hover:bg-rose-50 active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 sm:min-w-[62px] sm:px-2.5 sm:text-xs"
+              className="inline-flex min-w-[44px] cursor-pointer items-center justify-center rounded-full border border-rose-200 bg-white px-1.5 py-1.5 text-[11px] font-semibold whitespace-nowrap text-rose-700 shadow-xs transition-all hover:bg-rose-50 active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 sm:min-w-[62px] sm:px-2.5 sm:text-xs"
             >
               {isSigningOut ? "처리 중..." : "로그아웃"}
             </button>
@@ -100,7 +100,7 @@ export default function Header() {
         ) : (
           <Link
             href="/login"
-            className="inline-flex min-w-[50px] items-center justify-center rounded-full bg-gradient-to-r from-[#d9436e] to-[#eb5c84] px-2 py-1.5 text-[11px] font-semibold whitespace-nowrap text-white shadow-xs transition-all hover:brightness-105 active:scale-[0.97] sm:min-w-[62px] sm:px-3 sm:text-xs"
+            className="inline-flex min-w-[44px] items-center justify-center rounded-full bg-gradient-to-r from-[#d9436e] to-[#eb5c84] px-2 py-1.5 text-[11px] font-semibold whitespace-nowrap text-white shadow-xs transition-all hover:brightness-105 active:scale-[0.97] sm:min-w-[62px] sm:px-3 sm:text-xs"
           >
             로그인
           </Link>

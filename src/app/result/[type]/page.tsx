@@ -6,12 +6,33 @@ import SaveResultButton from "@/components/SaveResultButton";
 import ShareResultButton from "@/components/ShareResultButton";
 import { getMbtiTypeInfo } from "@/data/types";
 import { ALL_MBTI_TYPES, isValidMbtiType } from "@/lib/mbti";
+import { createPageMetadata } from "@/lib/metadata";
 
-/** 결과 페이지 브라우저 탭 제목과 설명입니다. */
-export const metadata: Metadata = {
-  title: "검사 결과 | 새코미 MBTI",
-  description: "나의 새코미 MBTI 성격 유형과 3D 동물 캐릭터를 확인해 보세요.",
-};
+/**
+ * MBTI 유형 코드에 맞춰 결과 페이지의 제목, 설명, Open Graph 미리보기를 동적으로 생성합니다.
+ * 예: "ENFP 햇살 같은 모험가 | 새코미 MBTI"
+ */
+export async function generateMetadata({
+  params,
+}: PageProps<"/result/[type]">): Promise<Metadata> {
+  const { type } = await params;
+  const normalizedType = type.toUpperCase();
+
+  if (!isValidMbtiType(normalizedType)) {
+    return createPageMetadata({
+      title: "없는 유형 | 새코미 MBTI",
+      description:
+        "요청하신 성격 유형을 찾을 수 없어요. 새코미 MBTI에서 12개 질문으로 나의 3D 동물 캐릭터를 찾아보세요.",
+    });
+  }
+
+  const typeInfo = getMbtiTypeInfo(normalizedType);
+
+  return createPageMetadata({
+    title: `${typeInfo.code} ${typeInfo.nickname} | 새코미 MBTI`,
+    description: `${typeInfo.character.name}(${typeInfo.code}) · ${typeInfo.summary}`,
+  });
+}
 
 /**
  * 빌드 시 16가지 유효한 MBTI 결과 경로(/result/ENFP 등)를 미리 생성합니다.
@@ -76,7 +97,7 @@ function InvalidTypeView() {
         없는 유형이에요
       </h1>
 
-      <p className="mt-2.5 text-sm leading-relaxed text-slate-500">
+      <p className="mt-2.5 text-sm leading-relaxed break-keep text-slate-500">
         요청하신 성격 유형을 찾을 수 없어요. 첫 화면으로 돌아가 다시 시작해 보세요.
       </p>
 

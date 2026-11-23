@@ -236,7 +236,7 @@ export default function MypageClient() {
           <p className="mt-4 text-base font-bold text-slate-700">
             아직 저장한 결과가 없어요
           </p>
-          <p className="mt-1.5 text-sm text-slate-500">
+          <p className="mt-1.5 text-sm break-keep text-slate-500">
             12개 질문에 답하고 나만의 3D 동물 캐릭터를 저장해 보세요.
           </p>
           <Link

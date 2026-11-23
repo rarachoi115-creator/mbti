@@ -36,9 +36,9 @@ export interface MbtiTypeInfo {
 
 /**
  * 16가지 MBTI 유형별 상세 정보 사전입니다.
- * 유형 코드를 키(key)로 두어 결과 페이지에서 바로 꺼내 쓸 수 있습니다.
+ * 유형 코드를 키(key)로 두어 getMbtiTypeInfo 와 MBTI_TYPE_LIST 에서 꺼내 씁니다.
  */
-export const MBTI_TYPES: Record<MbtiType, MbtiTypeInfo> = {
+const MBTI_TYPES: Record<MbtiType, MbtiTypeInfo> = {
   INTJ: {
     code: "INTJ",
     nickname: "조용한 미래 설계자",

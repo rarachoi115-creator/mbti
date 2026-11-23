@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import { AuthProvider } from "@/components/AuthProvider";
 import Header from "@/components/Header";
+import { createPageMetadata } from "@/lib/metadata";
 import "./globals.css";
 
 /**
@@ -14,11 +15,11 @@ const notoSansKr = Noto_Sans_KR({
   variable: "--font-noto-sans-kr",
 });
 
-/** 브라우저 탭 제목과 검색 엔진용 한국어 설명입니다. */
-export const metadata: Metadata = {
+/** 모든 페이지에 기본값으로 적용되는 제목, 설명, Open Graph 미리보기 정보입니다. */
+export const metadata: Metadata = createPageMetadata({
   title: "새코미 MBTI",
   description: "12개 질문으로 알아보는 나만의 3D 동물 캐릭터 성격 유형 검사",
-};
+});
 
 /**
  * 모든 페이지가 공통으로 사용하는 최상위 레이아웃입니다.

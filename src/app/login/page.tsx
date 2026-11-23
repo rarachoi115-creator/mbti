@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import LoginForm from "@/components/LoginForm";
+import { createPageMetadata } from "@/lib/metadata";
 
-/** 로그인 페이지 브라우저 탭 제목과 설명입니다. */
-export const metadata: Metadata = {
+/** 로그인 페이지 브라우저 탭 제목, 설명, Open Graph 미리보기입니다. */
+export const metadata: Metadata = createPageMetadata({
   title: "로그인 | 새코미 MBTI",
-  description: "새코미 MBTI 계정에 로그인해 보세요.",
-};
+  description: "새코미 MBTI 계정에 로그인하고 내 검사 기록을 확인해 보세요.",
+});
 
 /**
  * /login 로그인 페이지입니다.

@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import HomeCharacterShowcase from "@/components/HomeCharacterShowcase";
+import { createPageMetadata } from "@/lib/metadata";
+
+/** 첫 화면의 브라우저 탭 제목, 설명, Open Graph 미리보기 설정입니다. */
+export const metadata: Metadata = createPageMetadata({
+  title: "새코미 MBTI | 3D 동물 성격 유형 검사",
+  description:
+    "12개 질문에 답하고 나와 꼭 닮은 16가지 3D 동물 캐릭터를 찾아보세요.",
+});
 
 /**
  * 첫 화면에 보여줄 특징 카드 데이터 타입입니다.
@@ -104,7 +113,7 @@ export default function Home() {
         </h1>
 
         {/* 한 줄 소개 문구 */}
-        <p className="mt-2 text-sm leading-relaxed font-medium text-slate-600">
+        <p className="mt-2 text-sm leading-relaxed font-medium break-keep text-slate-600">
           12개 질문에 답하고 나와 꼭 닮은 3D 동물 캐릭터를 찾아보세요.
         </p>
 
@@ -150,7 +159,7 @@ export default function Home() {
               <h2 className="text-base font-bold text-slate-800">
                 {card.title}
               </h2>
-              <p className="mt-0.5 text-xs leading-snug text-slate-500">
+              <p className="mt-0.5 text-xs leading-snug break-keep text-slate-500">
                 {card.description}
               </p>
             </div>
@@ -160,7 +169,7 @@ export default function Home() {
 
       {/* 맨 아래 작은 안내 문구 */}
       <footer className="mt-auto pt-8 text-center">
-        <p className="text-xs leading-relaxed text-slate-500">
+        <p className="text-xs leading-relaxed break-keep text-slate-500">
           이 검사는 재미로 보는 간이 검사이며, 공식 MBTI® 검사가 아닙니다.
         </p>
       </footer>
